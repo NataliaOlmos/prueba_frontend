@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Card } from "react-bootstrap";
-
 import axios from "axios";
+import SearchCard from "../components/Card";
+import config from "../constants/Enviroment";
+import { Link } from "react-router-dom";
 
 
 const Search = () => {
@@ -10,7 +11,7 @@ const Search = () => {
 
     useEffect(() => {
         const loadMovies = async () => {
-            const response = await axios.get("https://ghibliapi.herokuapp.com/films");
+            const response = await axios.get(`${config.apiUrl}`);
             setMovies(response.data)
             console.log(response.data)
         }
@@ -36,16 +37,13 @@ const Search = () => {
         <div><input placeholder="Buscar película"
             onChange={(e) => searchMovies(e.target.value)}
         />
-            {movieMatch && movieMatch.map((item, id) => (
-                <Card style={{ width: '18rem' }}>
-                    <Card.Body>
-                        <div key={item.id} >
-                            <img src={item.image} style={{ height: "10%", width: "15%", boderRadius: "50%" }}></img>
-                            Movie:{item.title}
-                        </div>
-                    </Card.Body>
-                </Card>
-            ))
+            {(
+                movieMatch && movieMatch.map((item) => (
+                    <Link to={`/moviedata/${item.id}`}>
+                        <SearchCard result={item} key={item.id} />
+                    </Link>
+                ))
+            )
             }
         </div >
     )

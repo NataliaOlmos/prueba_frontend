@@ -1,5 +1,6 @@
 import React from "react";
 import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import home from "../assets/images/home.png"
 
 const Navtop = () => {
@@ -7,7 +8,8 @@ const Navtop = () => {
         <div>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Container>
-                    <Navbar.Brand href="#home"><img src={home} /></Navbar.Brand>
+                    <Navbar.Brand >
+                        <Link to={`/`} ><img src={home} /></Link></Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
