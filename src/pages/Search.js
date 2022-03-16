@@ -3,6 +3,7 @@ import axios from "axios";
 import SearchCard from "../components/Card";
 import config from "../constants/Enviroment";
 import { Link } from "react-router-dom";
+import "./Search.css"
 
 
 const Search = () => {
@@ -13,12 +14,10 @@ const Search = () => {
         const loadMovies = async () => {
             const response = await axios.get(`${config.apiUrl}`);
             setMovies(response.data)
-            console.log(response.data)
         }
         loadMovies()
     }, [])
 
-    console.log(movies)
 
     const searchMovies = (text) => {
         if (!text) {
@@ -27,23 +26,24 @@ const Search = () => {
             let matches = movies.filter((movie) => {
                 const regex = new RegExp(`${text}`, "gi");
                 return movie.title.match(regex);
-                console.log(movie.title)
             })
             setMovieMatch(matches);
         }
     }
 
     return (
-        <div><input placeholder="Buscar película"
-            onChange={(e) => searchMovies(e.target.value)}
-        />
-            {(
-                movieMatch && movieMatch.map((item) => (
-                    <Link to={`/moviedata/${item.id}`}>
-                        <SearchCard result={item} key={item.id} />
-                    </Link>
-                ))
-            )
+        <div className="input__container">
+            <input className="search__input" placeholder="Search Film..."
+                onChange={(e) => searchMovies(e.target.value)}
+            />
+            {
+                (
+                    movieMatch && movieMatch.map((item) => (
+                        <Link className="link__movie" to={`/moviedata/${item.id}`} key={item.id}>
+                            <SearchCard result={item} key={item.id} />
+                        </Link>)
+                    )
+                )
             }
         </div >
     )

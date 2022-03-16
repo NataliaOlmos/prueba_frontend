@@ -1,0 +1,11 @@
+.movies__container {
+    margin: 10px;
+    text-align: center;
+    font-family: AvenirBook;
+}
+
+.card__movie {
+    margin: 10px;
+    height: 10%;
+    width: 15%;
+}

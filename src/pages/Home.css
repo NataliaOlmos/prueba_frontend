@@ -1,0 +1,7 @@
+.container__home {
+    background-image: url("../assets/images/totoro.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 100px;
+    font-family: AvenirBook;
+}

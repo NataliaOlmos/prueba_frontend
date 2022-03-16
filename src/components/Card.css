@@ -1,0 +1,17 @@
+.card__style {
+    margin: auto;
+    display: block;
+    border: none;
+    font-family: AvenirBook;
+}
+
+.card__image {
+    height: 15%;
+    width: 15%;
+}
+
+.card__title {
+    color: #0B3754;
+    margin-left: 5px;
+    font-size: 12px;
+}

@@ -1,15 +1,15 @@
 import React from "react";
 import { Card } from "react-bootstrap";
+import "./Card.css"
 
 
 const SearchCard = (props) => {
-    console.log(props.result.id)
     return (
-        <Card style={{ width: '18rem' }}>
+        <Card className="card__style" style={{ width: '16rem' }}>
             <Card.Body>
                 <div key={props.result.id} >
-                    <img src={props.result.image} style={{ height: "10%", width: "15%", boderRadius: "50%" }}></img>
-                    {props.result.title}
+                    <img className="card__image" src={props.result.image} alt={props.result.title}></img>
+                    <span className="card__title" >{props.result.title}</span>
                 </div>
             </Card.Body>
         </Card>

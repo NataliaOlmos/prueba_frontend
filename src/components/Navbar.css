@@ -1,0 +1,16 @@
+.bg-myNav {
+    background-color: #0B3754;
+    font-family: AvenirBook;
+}
+
+.navbar__brand {
+    margin: 0 20px 0 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #F6F6F6;
+}
+
+.logo__link {
+    margin: 0;
+    padding: 0;
+}

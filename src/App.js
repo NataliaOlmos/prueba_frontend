@@ -1,12 +1,12 @@
 import React from "react";
 import Routesone from "./Routes";
 import Navtop from "./components/Navbar";
-import Search from "./pages/Search";
+import "./App.css"
 
 
 function App() {
   return (
-    <div className="container-fluid">
+    <div>
       <Navtop />
       <Routesone />
     </div>
