@@ -11,4 +11,6 @@ Respecto a la arquitectura, utilicé la división por carpetas de acuerdo a pág
 Si pudiera describirlos diría que son aquellos detalles que permitirían que fuera redondo.
 Funcionalidades extra y seguramente ir más allá en cuestión de UX/UI.
 
-Link:
+Link.
+Repositorio: https://github.com/NataliaOlmos/prueba_frontend 
+Deploy Github pages : https://nataliaolmos.github.io
