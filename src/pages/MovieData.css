@@ -1,10 +1,16 @@
 .movie__title {
     text-align: center;
+
 }
 
 .container__movie-data {
     display: flex;
     font-family: AvenirBook;
+    background-color: #429BD5;
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
+
 }
 
 .image__card-container {
@@ -28,4 +34,11 @@
 .data__card ul li {
     list-style-type: none;
 
+}
+
+@media only screen and (max-width: 850px) {
+    .movie__poster {
+        height: 50%;
+        width: 50%;
+    }
 }

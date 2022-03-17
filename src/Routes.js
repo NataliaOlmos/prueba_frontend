@@ -1,6 +1,5 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
 import MovieData from "./pages/MovieData";
 import Movies from "./pages/Movies";
 import Search from "./pages/Search";
@@ -8,8 +7,7 @@ import Search from "./pages/Search";
 function Routesone() {
     return (
         <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/search-movie" element={<Search />} />
+            <Route path="/" element={<Search />} />
             <Route path="/moviedata/:id" element={<MovieData />} />
             <Route path="/movies" element={<Movies />} />
         </Routes>

@@ -3,16 +3,20 @@ import axios from "axios";
 import config from "../constants/Enviroment";
 import { Link } from "react-router-dom";
 import "./Movies.css"
-
+import Loader from "../components/Loader";
 
 
 const Movies = () => {
 
     const [allMovies, setAllMovies] = useState([]);
+    const [loading, setLoading] = useState(false);
+
 
     useEffect(() => {
         const showMovies = async () => {
+            setLoading(true)
             const response = await axios.get(`${config.apiUrl}`);
+            setLoading(false)
             setAllMovies(response.data)
         }
         showMovies()
@@ -20,6 +24,7 @@ const Movies = () => {
 
     return (
         <div className="movies__container">
+            {loading && <Loader />}
             {(
                 allMovies.map((item) => (
                     <Link to={`/moviedata/${item.id}`} key={item.id}>

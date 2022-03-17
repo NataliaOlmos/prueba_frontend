@@ -6,14 +6,20 @@ import { Link } from "react-router-dom";
 import "./Search.css"
 
 
+
+
 const Search = () => {
-    const [movies, setMovies] = useState([])
-    const [movieMatch, setMovieMatch] = useState([])
+
+    const [movies, setMovies] = useState([]);
+    const [movieMatch, setMovieMatch] = useState([]);
+
+
 
     useEffect(() => {
         const loadMovies = async () => {
             const response = await axios.get(`${config.apiUrl}`);
             setMovies(response.data)
+            console.log(response.data)
         }
         loadMovies()
     }, [])
@@ -28,12 +34,14 @@ const Search = () => {
                 return movie.title.match(regex);
             })
             setMovieMatch(matches);
+            console.log(matches)
         }
     }
 
     return (
         <div className="input__container">
-            <input className="search__input" placeholder="Search Film..."
+            <h3>Search your favorite Studio Ghibli film</h3>
+            <input type="text" className="search__input" placeholder="Search Film..."
                 onChange={(e) => searchMovies(e.target.value)}
             />
             {
@@ -41,8 +49,8 @@ const Search = () => {
                     movieMatch && movieMatch.map((item) => (
                         <Link className="link__movie" to={`/moviedata/${item.id}`} key={item.id}>
                             <SearchCard result={item} key={item.id} />
-                        </Link>)
-                    )
+                        </Link>
+                    ))
                 )
             }
         </div >

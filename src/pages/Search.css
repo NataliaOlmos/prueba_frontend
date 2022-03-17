@@ -1,3 +1,17 @@
+.input__container {
+    background-image: url("../assets/images/totoro.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 600px;
+    font-family: AvenirBook;
+}
+
+.input__container h3 {
+    text-align: center;
+    margin: 30px;
+    color: #0B3754;
+}
+
 .search__input {
     margin: auto;
     display: block;
@@ -7,12 +21,17 @@
     background-color: #0B3754;
     padding: 5px;
     color: #F6F6F6;
-    font-family: AvenirBook;
     width: 260px;
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
 }
 
 .search__input:active {
     border: 1px solid #F6F6F6;
+}
+
+.close__icon {
+    color: #0B3754;
+    width: 30px;
 }
 
 .link__movie {
@@ -20,4 +39,17 @@
     text-align: left;
     margin: auto;
     display: block;
+}
+
+@media only screen and (max-width: 800px) {
+    .input__container {
+        background-image: url("../assets/images/totoro.png");
+        background-size: cover;
+        background-repeat: repeat-x;
+        height: 200px;
+    }
+
+    .search__input {
+        width: 120px;
+    }
 }

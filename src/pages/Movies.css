@@ -2,6 +2,8 @@
     margin: 10px;
     text-align: center;
     font-family: AvenirBook;
+    background-color: #429BD5;
+    border-radius: 10px;
 }
 
 .card__movie {

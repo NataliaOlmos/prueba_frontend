@@ -3,16 +3,22 @@ import { useParams } from "react-router-dom";
 import "./MovieData.css"
 import config from "../constants/Enviroment";
 import axios from "axios";
+import Loader from "../components/Loader";
+
 
 
 const MovieData = () => {
     const { id } = useParams();
 
     const [movieInfo, setMovieInfo] = useState([]);
+    const [loading, setLoading] = useState(false);
+
 
     useEffect(() => {
         const getMovieData = async () => {
+            setLoading(true)
             const response = await axios.get(`${config.apiUrl}/${id}`);
+            setLoading(false)
             setMovieInfo(response.data)
         }
         getMovieData()
@@ -22,6 +28,7 @@ const MovieData = () => {
         <div>
             <div className="container__movie-data">
                 <div className="image__card-container">
+                    {loading && <Loader />}
                     <img className="movie__poster"
                         src={movieInfo.image} alt={movieInfo.title} />
                 </div>
