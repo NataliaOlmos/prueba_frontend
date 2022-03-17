@@ -28,7 +28,7 @@ const Movies = () => {
             {(
                 allMovies.map((item) => (
                     <Link to={`/moviedata/${item.id}`} key={item.id}>
-                        <img className="card__movie" src={item.image} ></img>
+                        <img className="card__movie" src={item.image} alt={item.title}></img>
                     </Link>
                 ))
             )
